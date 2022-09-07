@@ -10,10 +10,7 @@ public class balancedStack {
      
         for( int i=0;i<input.length();i++)
         {
-          if(input.charAt(i)=='('
-            ||input.charAt(i)=='{'
-            ||input.charAt(i)=='['
-            ||input.charAt(i)=='<')
+          if(isLeftBracket(input.charAt(i)))
             {
 newStack.push(input.charAt(i));
             } 
@@ -35,11 +32,19 @@ newStack.push(input.charAt(i));
       
 
     }
+
+    private boolean isLeftBracket(char input)
+    {
+return input=='('
+||input=='{'
+||input=='['
+||input=='<';
+    }
     public static void main(String [] args)
     {
-String str= "[9)";
+String str= "[(9)]";
 
 balancedStack stk = new balancedStack();
-System.out.println(stk.blaanced(str));
+System.out.println("The String is balanced?:"+    stk.blaanced(str));
     }
 }

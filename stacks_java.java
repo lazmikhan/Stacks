@@ -3,12 +3,21 @@ public class stacks_java {
     private int count;
     public stacks_java()
     {
-        Arr = new int[10];
+        Arr = new int[2];
         count=0;
     }
 
     public void push(int item)
     {
+        if(Arr.length==count)
+        {
+            int [] newArr = new int[count*2];
+            for(int i=0;i<count;i++)
+            {
+                newArr[i]= Arr[i];
+            }
+            Arr=newArr;
+        }
       Arr[count]=item;
       count++;
     }
